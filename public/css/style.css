@@ -1,0 +1,281 @@
+div>h3 {
+	font-size:19px;
+	font-weight:bold;
+	font-family:courier;
+}
+
+div>p {
+	font:normal 14pt georgian;
+}
+
+label {
+	font:normal 20px garamond;
+}
+
+li {
+	text-align: left;
+    padding:2%;
+    padding-left:7%;
+}
+
+ul[id="inputAdder"]>li {
+    color:rgb(20,80,150);
+    cursor:pointer;
+}
+
+button {
+	background: rgb(20,80,150);
+	color: rgb(240,240,255);
+}
+
+button:hover {
+	color: rgb(20,80,150);
+	background: rgb(200,200,245);
+}
+
+a {
+    text-decoration:none;
+}
+
+a:hover {
+    text-decoration:underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10%;
+	width:55vw;
+	padding:0px;
+}
+
+.v-scroll {
+	overflow:scroll;
+}
+
+.profile {
+	cursor:pointer;
+	text-decoration:none;
+}
+
+.profile:hover {
+	text-decoration:underline;
+}
+
+.profileContent {
+    padding-bottom:10%;
+    width:45vw;
+    margin-top:5%;
+}
+
+.header {
+	text-align:center;
+	font:normal 22px Georgia;
+}
+
+.bottomHeader:hover {
+	animation-name: bottomHeaderTextColor;
+	animation-duration:3s;
+	animation-timing-function: linear;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.topHeader:hover {
+	animation-name:topHeaderTextColor;
+	animation-duration:3s;
+	animation-timing-function: linear;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.panelBodyContent {
+    display:flex;
+    flex-direction:column;
+    padding-left:1%;
+    padding-right:5%;
+}
+
+.dropdown-menu {
+    margin-bottom:85%;
+}
+
+.container {
+    display:flex;
+    width:70vw;
+}
+
+.goBackLink {
+    margin-left:5%;
+    width:10vw;
+}
+
+.searchDiv {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    /* border:solid 1pt white; */
+    padding:0;
+    /* padding-top:2%; */
+    width:15vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+#inputAdder {
+    border-radius:10px;
+    box-shadow:5px 5px 15px rgb(20,80,150);
+    font:bold 11pt garamond;
+}
+
+#searchLink {
+    /* border:solid 1pt white; */
+    height:2vh;
+    padding:0;
+    margin:0;
+    /* position:absolute;left:auto;right:auto; */
+}
+
+#searchLink>span {
+    /* border:solid 1pt yellow; */
+    padding:0;
+    margin:0;
+    color:white;
+    font-size:17px;
+}
+
+#searchLink>span :hover{
+    color:green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+@keyframes bottomHeaderTextColor {
+    from {color: darkgray;}
+    to {color: rgb(240,245,100);}
+}
+
+@keyframes topHeaderTextColor {
+	from {color: darkgray;}
+	to  {color: rgb(240,245,100);}
+}
+
+	
+		
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1680px)  {
+    .profileContent {
+        padding-bottom:10%;
+        width:30vw;
+        margin-top:1%;
+    }
+}
+
+@media screen and (max-width: 830px)  {
+    .profileContent {
+        padding-bottom:10%;
+        width:70vw;
+        margin-top:5%;
+    }
+}
+
+@media screen and (max-width: 767px)  {
+    .profileContent {
+        padding-bottom:10%;
+        width:70vw;
+        margin-top:15%;
+    }
+}
+
+@media screen and (max-width: 499px)  {
+    .profileContent {
+        padding-bottom:10%;
+        width:70vw;
+        margin-top:20%;
+    }
+}

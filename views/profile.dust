@@ -1,0 +1,70 @@
+{>"layout" /}
+{<body}
+    <div class="v-scroll container">
+        <form method="post" action="/edit">
+            <div class="row well">
+                <h3 class="header">Edit {profile.username}</h3>
+                
+                <br/>
+                
+                <div class="col-md-6 v-scroll">
+                    <input type="hidden" id="edit-form-id" name="id" value="{profile.id}" />
+
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" id="edit-form-title" name="title" value="{profile.title}" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" id="edit-form-username" name="username" value="{profile.username}" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="text" class="form-control" id="edit-form-pwd" name="pwd" value="{profile.pwd}" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Site</label>
+                        <input type="text" class="form-control" id="edit-form-site" name="site" value="{profile.site}" required />
+                    </div>		
+                </div>
+                
+                <div id="form1" class="col-md-6 v-scroll form">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" id="edit-form-email" name="email" value="{profile.email}" />
+                    </div>
+                    
+                    {#profile.extra}
+                        <div class="form-group">
+                            <label>{key}</label>
+                            <input type="text" class="form-control" id="edit-form-{key}" name="{key}" value="{value}" />
+                        </div>
+                    {/profile.extra}
+                </div>
+                
+                <div class="modal-footer">
+                    <div class="btn-group dropdown clearfix pull-left">
+                        <button class="btn">Submit</button>
+                        <button class="btn dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul id="inputAdder" class="dropdown-menu">
+                            <li id="textInput">Add Text Field</li>
+                            <li id="passwordInput">Add Password Field</li>
+                            <li id="emailInput">Add Email Field</li>
+                        </ul>
+                    </div>
+                                
+                    <button class="btn btn-danger pull-right delete-profile" data-id="{profile.id}">   
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </div>	
+            </div>
+        </form>
+        <hr/>        
+        <p class="goBackLink"><a class="link anchor clearfix" target="_top" href="/">Go Back</a></p>
+    </div> 
+{/body}
