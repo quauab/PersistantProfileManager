@@ -144,6 +144,35 @@ app.post('/search',function(req, res){
     const keyword = req.body.keyword;
     const results = [];
     
+    
+    
+    
+    couch.get(dbName, viewUrl).then(
+    function(data, headers, status) {
+        // console.log(data.data.rows);
+       for (var d in data.data.rows) {
+           var profile = data.data.rows[d];
+           if (profile.value.title.trim().toLowerCase() === keyword.trim().toLowerCase() ||
+               profile.value.email.trim().toLowerCase() === keyword.trim().toLowerCase() ||
+               profile.value.login.trim().toLowerCase() === keyword.trim().toLowerCase()) {
+                   results.push(profile);
+               }
+       }
+       
+       if (results.length > 0) {
+           res.render('searched',{results:results,pageTitle:'Search Results'});
+       } else {
+           res.redirect('/');
+       }
+    },
+    function(err){
+        res.send(err);
+    });
+    
+    
+    
+    
+    
     /*
     const list = pm.list();    
     for (var l in list) {
