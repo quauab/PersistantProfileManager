@@ -143,6 +143,8 @@ app.get('/profile/:id', function(req, res){
 app.post('/search',function(req, res){
     const keyword = req.body.keyword;
     const results = [];
+    
+    /*
     const list = pm.list();    
     for (var l in list) {
         var item = list[l];
@@ -156,7 +158,7 @@ app.post('/search',function(req, res){
         res.render('searched',{results:results});
     } else {
         res.redirect('/');
-    }
+    }//*/
 });
 
 app.post('/add',function(req, res){
@@ -172,7 +174,7 @@ app.post('/add',function(req, res){
         if (p !== 'title' && p !== 'login' && p !== 'pwd' && p !== 'site' && p !== 'email') {
             var objP = req.body[p];
             if (objP) {
-                data.push({key:cfc(p),value:objP});
+                extra.push({key:cfc(p),value:objP});
             }
         }
     }
@@ -182,7 +184,8 @@ app.post('/add',function(req, res){
     couch.uniqid().then(function(ids){
         const id = ids[0];
         
-        couch.insert(dbName, {_id:id,
+        couch.insert(dbName, {
+        _id:id,
         title:title,
         site:site,
         login:login,
@@ -190,7 +193,7 @@ app.post('/add',function(req, res){
         email:email,
         extra:extra
         }).then(function(data, headers, status){
-            console.log('\n\n\t\t\tData:\t' + data + '\n\t\t\tHeaders:\t' + headers + '\n\t\t\tStatus:\t' + status + '\n\n');
+            // console.log('\n\n\t\t\tData:\t' + data + '\n\t\t\tHeaders:\t' + headers + '\n\t\t\tStatus:\t' + status + '\n\n');
             res.redirect('/');
         },
         function(err){

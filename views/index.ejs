@@ -34,82 +34,150 @@
 		</nav>	
 		
 		<div id="main" class="row main container">	
-        
-        
-        
-        
-        
+                
             <div class="col-md-6 right v-scroll profileContent">
-            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#formModalProfile">
-                Add Profile
-            </button>
-            <hr>
-        
-        
-        
-        
-
-            <% profiles.forEach(function(profile){%>
-                <div class="panel-group">
-                    <div class="panel panel-default list">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <span  class="glyphicon glyphicon-user profile" data-id="<%=profile.key%>"></span>&nbsp; <%=profile.value.login%>
-                                <a data-toggle="collapse" href="#profile_<%=profile.key%>">
-                                    <span class="glyphicon glyphicon-triangle-top pull-right expand" aria-hidden="true"></span>
-                                </a>
-                            </h4>					
-                        </div>
-                        <div id="profile_<%=profile.key%>" class="panel-collapse collapse">
-                        
-                            <div class="panel-body">
-                                <div class="v-scroll panelBodyContent">
-                                    <p>Organization: <%=profile.value.title%></p>
-                                    <p>Website: <a target="_blank" href="{site}"><%=profile.value.site%></a></p>
-                                    <p>Username: <%=profile.value.login%></p>
-                                    <p>Password: <%=profile.value.pwd%></p>
-                                    <p>Email: <%=profile.value.email%></p>  
-                                    <% if(Object.keys(profile.value.extra).length) {%>
-                                    <% profile.value.extra.forEach(function(data){ %>                            
+                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#formModalProfile">
+                    Add Profile
+                </button>
+                <hr>
+            
+                <% profiles.forEach(function(profile){%>
+                    <div class="panel-group">
+                        <div class="panel panel-default list">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <span  class="glyphicon glyphicon-user profile" data-id="<%=profile.key%>"></span>&nbsp; <%=profile.value.login%>
+                                    <a data-toggle="collapse" href="#profile_<%=profile.key%>">
+                                        <span class="glyphicon glyphicon-triangle-top pull-right expand" aria-hidden="true"></span>
+                                    </a>
+                                </h4>					
+                            </div>
+                            <div id="profile_<%=profile.key%>" class="panel-collapse collapse">
                             
-                                        <p>
-                                            <%=data.key%>: <%=data.value%>                                            
-                                        </p>
-                                   <% }); }%>
+                                <div class="panel-body">
+                                    <div class="v-scroll panelBodyContent">
+                                        <p>Organization: <%=profile.value.title%></p>
+                                        <p>Website: <a target="_blank" href="{site}"><%=profile.value.site%></a></p>
+                                        <p>Username: <%=profile.value.login%></p>
+                                        <p>Password: <%=profile.value.pwd%></p>
+                                        <p>Email: <%=profile.value.email%></p>  
+                                        <% if(Object.keys(profile.value.extra).length) {%>
+                                        <% profile.value.extra.forEach(function(data){ %>                            
+                                
+                                            <p>
+                                                <%=data.key%>: <%=data.value%>                                            
+                                            </p>
+                                       <% }); }%>
+                                    </div>
+                                </div>
+                                
+                                <div class="panel-footer">
+                                    <button class="btn btn-default edit-profile" data-toggle="modal" data-target="#editFormModal"
+                                        data-id="<%=profile.key%>"
+                                        data-rev="<%=profile.rev%>"
+                                        data-title="<%=profile.value.title%>"
+                                        data-site="<%=profile.value.site%>"
+                                        data-username="<%=profile.value.login%>"
+                                        data-pwd="<%=profile.value.pwd%>"
+                                        data-email=" <%=profile.value.email%>">                                
+                                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                    </button>
+                                    
+                                    <button class="btn btn-danger delete-profile pull-right" data-id="<%=profile.key%>"
+                                        data-rev="<%=profile.rev%>">                            
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </button>
                                 </div>
                             </div>
-                            
-                            <div class="panel-footer">
-                                <button class="btn btn-default edit-profile" data-toggle="modal" data-target="#editFormModal"
-                                    data-id="<%=profile.key%>"
-                                    data-rev="<%=profile.rev%>"
-                                    data-title="<%=profile.value.title%>"
-                                    data-site="<%=profile.value.site%>"
-                                    data-username="<%=profile.value.login%>"
-                                    data-pwd="<%=profile.value.pwd%>"
-                                    data-email=" <%=profile.value.email%>">                                
-                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                                </button>
-                                
-                                <button class="btn btn-danger delete-profile pull-right" data-id="<%=profile.key%> data-rev="<%=profile.rev%>">                            
-                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                </button>
-                            </div>
                         </div>
-                    </div>
-                </div>  
-            <%});%>
+                    </div>  
+                <%});%> 
+            </div>
+            
+		</div>
         
-                
-        </div>
-		
 		<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<span class="navbar-brand bottomHeader" id="navbarheaderbottom"></span>
 				</div>
 			</div>
-		</nav>
+		</nav>        
+        
+        <div class="modal fade" id="formModalProfile" tabindex="-1" role="dialog" aria-labeledby="formModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                Add Profile
+                            </div>
+
+                            <div class="panel-body">
+                                <form method="post" action="/add">
+                                    <div  id="form1" class="form">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-record"></i></span>
+                                                <input type="text" class="form-control" placeholder="Profile Title" name="title" required/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input type="text" class="form-control" placeholder="Login ID" name="login" required/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <input type="password" class="form-control" placeholder="Login Password" name="pwd" required/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                                                <input type="text" class="form-control" placeholder="Login Site" name="site" required/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                <input type="email" class="form-control" placeholder="Registered Email" name="email" />
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                        
+                                    <div class="panel-footer">
+                                        <div class="btn-group dropdown clearfix">
+                                            <button class="btn">Submit</button>
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul id="inputAdder" class="dropdown-menu">
+                                                <li id="textInput">Add Text Field</li>
+                                                <li id="passwordInput">Add Password Field</li>
+                                                <li id="emailInput">Add Email Field</li>
+                                            </ul>
+                                        </div>
+                                        <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</body>
         <script src="/js/resources.js"></script>
         <script src="/js/start.js"></script>
