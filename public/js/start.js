@@ -23,18 +23,8 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.edit-profile').on('click', function(){
-		$('#edit-form-id').val($(this).data('id'));
-		$('#edit-form-name').val($(this).data('name'));
-		$('#edit-form-username').val($(this).data('username'));
-		$('#edit-form-title').val($(this).data('title'));
-		$('#edit-form-pwd').val($(this).data('pwd'));
-		$('#edit-form-middle_name').val($(this).data('middle_name'));
-		$('#edit-form-email').val($(this).data('email'));
-		$('#edit-form-emails').val($(this).data('emails'));
-		$('#edit-form-phone').val($(this).data('phone'));
-		$('#edit-form-site').val($(this).data('site'));
-        $('#edit-form-extra').val($(this).data('extra'));
+	$('.edit-profile').on('click', function(){		
+        window.open($(this).data('url'), '_top');
 	});
 	
 	$('.expand').on('click', function(){
