@@ -1,4 +1,4 @@
-# Profile Manager with Database Persistance
+# Profile Manager with Database Persistence
 
 ## A web application that manages user profiles, using CouchDB backend
 
