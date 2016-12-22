@@ -23,4 +23,7 @@ nodemon
 ## Changed
     # Issue: Newly added input data doesn't show on the edit modal from within the main page
     # Revised: Removed edit modal from the main page. Editing now takes place on the profile page
+    
+##TODO
+    Add profile search capability
 ```
