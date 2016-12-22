@@ -10,10 +10,7 @@ With this existing package.json file:
 Without this existing package.json file:
   npm init
   npm install express body-parser consolidate dust dustjs dustjs-linkedin uuid chalk --save
-    
-# Development Dependencies
-  npm install --save-dev mocha
-  
+
 # Install Nodemon
 npm install -g nodemon
 
