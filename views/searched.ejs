@@ -9,6 +9,29 @@
 		<script src="/js/bootstrap.js"></script>
 	</head>
 	<body class="container">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<span class="navbar-brand text topHeader" id="navbarheadertop">Profile Manager</span>
+				</div>
+				<ul class="nav navbar-nav pull-right">	
+					<li role="presentation">
+                        <div class="searchDiv container-flex">
+                            <a id="searchLink" data-toggle="collapse" href="#searcher">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            </a>
+                            <div id="searcher" class="panel-collapse collapse">
+                                <form class="form inline-horizontal searchForm" method="POST" action="/search">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="keyword" placeholder="Enter Search Term" required />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>				
+				</ul>					
+			</div>
+		</nav>
     
     
         <div id="resultPage" class="row">
