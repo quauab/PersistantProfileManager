@@ -194,7 +194,7 @@ app.post('/add',function(req, res){
 	const title = cfc(req.body.title);
     const login = cfc(req.body.login);
     const pwd = req.body.pwd;
-    const site = cfc(req.body.site);
+    const site = req.body.site;
     const email = cfc(req.body.email);
     // console.log('\tTitle:\t' + title + '\n\tLogin:\t' + login + '\n\tPwd:\t' + pwd + '\n\tSite:\t' + site + '\n\tEmail:\t' + email);
     const extra = [];
@@ -236,7 +236,7 @@ app.post('/edit',function(req, res){
         rev = req.body.rev,
 		uname = cfc(req.body.username),
 		title = cfc(req.body.title),
-		site = cfc(req.body.site),
+		site = req.body.site,
 		pwd = req.body.pwd,
 		email = cfc(req.body.email);
         // console.log('\tId:\t' + id + '\n\tUsername:\t' + uname + '\n\tTitle:\t' + title + '\n\tSite:\t' + site + '\n\tPassword:\t' + pwd + '\n\tEmail:\t' + email);
