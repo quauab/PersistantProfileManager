@@ -200,8 +200,6 @@ app.post('/add',function(req, res){
             console.log(err);
         });
     });
-    
-	res.redirect('/');
 });
 
 app.post('/edit',function(req, res){
@@ -253,9 +251,16 @@ app.post('/edit',function(req, res){
 
 app.delete('/delete/:id', function(req, res){
 	var id = req.params.id;
+    var rev = req.params.rev;
+    console.log('ID:\t' + id + '\t\tRev:\t' + rev);
 	// console.log('ID: ' + id);
-	pm.remove(id.toString(),'remove');
-	res.sendStatus(200);
+	// pm.remove(id.toString(),'remove');
+    /*
+    couch.del(dbName, id, rev).then(({data, headers, status}) => {        
+        res.sendStatus(200);
+    }, err => {
+        console.log(err);
+    });  */  
 });
 
 // Server 

@@ -25,5 +25,5 @@ nodemon
     # Revised: Removed edit modal from the main page. Editing now takes place on the profile page
 
 ## TODO
-Add final CRUD functionalities create and delete
+Add final CRUD functionality, delete
 ```
