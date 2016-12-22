@@ -61,13 +61,13 @@
                                         <p>Username: <%=profile.value.login%></p>
                                         <p>Password: <%=profile.value.pwd%></p>
                                         <p>Email: <%=profile.value.email%></p>  
-                                        <% if(Object.keys(profile.value.extra).length) {%>
+                                        <% if(Object.keys(profile.value.extra).length) {%> 
                                         <% profile.value.extra.forEach(function(data){ %>                            
                                 
                                             <p>
                                                 <%=data.key%>: <%=data.value%>                                            
                                             </p>
-                                       <% }); }%>
+                                       <% });} %>
                                     </div>
                                 </div>
                                 

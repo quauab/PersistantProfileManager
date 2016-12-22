@@ -33,7 +33,7 @@
 			</div>
 		</nav>
 		
-		<div id="main" class="row main container">	
+		<div id="main" class="row profileContent">	
         
         
         
@@ -77,8 +77,7 @@
                                 <input type="text" class="form-control" id="edit-form-email" name="email" value="<%=profile.email%>" />
                             </div>
                             
-                            <% profile.extra.forEach(function(data){ %>                            
-                            
+                            <% profile.extra.forEach(function(data){ %>                                  
                                 <div class="form-group">
                                     <label><%=data.key%></label>
                                     <input type="text" class="form-control" name="<%=data.key%>" value="<%=data.value%>" />

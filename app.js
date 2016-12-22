@@ -10,8 +10,8 @@ var express = require('express'),
 const NodeCouchDb = require('node-couchdb');
 const authorization = {
     auth: {
-        user:'rickmin',
-        password:'01234'
+        user:'profmin',
+        password:'02468'
     }
 };
 const dbName = "myprofiles";
