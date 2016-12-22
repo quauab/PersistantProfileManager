@@ -2,13 +2,16 @@ $(document).ready(function(){
 	
 	initDateTime();
 
-	$('.delete-profile').on('click',function(){
-		var id = $(this).data('id');
+	$('.delete-profile').on('click',function(){        
+        var rev = $(this).data('rev');  
+		var id = $(this).data('id') + ':' + rev;      
 		var url = '/delete/'+id;
+        
 		if (confirm('Delete Profile?')) {
 			$.ajax({
 				url: url,
 				type: 'DELETE',
+                data:{rev:rev},
 				success:function(result){
 					console.log('Deleting User ...');
 					window.location.href='/';
