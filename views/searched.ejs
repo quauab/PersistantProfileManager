@@ -11,39 +11,41 @@
 	<body class="container">
     
     
-    
-        <div id="rightButton" class="col-md-6 right v-scroll profileContent">        
-            <% results.forEach(function(result) { %>
-                <div class="panel-group">
-                    <div class="panel panel-default list">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <span  class="glyphicon glyphicon-user profile"></span>&nbsp; <%=result.value.login%>
-                                <a data-toggle="collapse" href="#profile_<%=result.key%>">
-                                    <span class="glyphicon glyphicon-triangle-top pull-right expand" aria-hidden="true"></span>
-                                </a>
-                            </h4>					
-                        </div>
-                        <div id="profile_<%=result.key%>" class="panel-collapse collapse">                    
-                            <div class="panel-body">
-                                <div class="v-scroll panelBodyContent">
-                                    <p>Organization: <%=result.value.title %></p>
-                                    <p>Website: <a target="_blank" href="<%=result.value.site%>"><%=result.value.site%></a></p>
-                                    <p>Username: <%=result.value.login%></p>
-                                    <p>Password: <%=result.value.pwd%></p>
-                                    <p>Email: <%=result.value.email%></p>  
-                                    <% result.value.extra.forEach(function(profile) { %>
-                                        <p><%=profile.value.key%>: <%=profile.value.value%></p>
-                                    <% }); %>
+        <div id="resultPage" class="row">
+            <div class="col-md-6 v-scroll profileContent">        
+                <% results.forEach(function(result) { %>
+                    <div class="panel-group">
+                        <div class="panel panel-default list">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <span  class="glyphicon glyphicon-user profile"></span>&nbsp; <%=result.value.login%>
+                                    <a data-toggle="collapse" href="#profile_<%=result.key%>">
+                                        <span class="glyphicon glyphicon-triangle-top pull-right expand" aria-hidden="true"></span>
+                                    </a>
+                                </h4>					
+                            </div>
+                            <div id="profile_<%=result.key%>" class="panel-collapse collapse">                    
+                                <div class="panel-body">
+                                    <div class="v-scroll panelBodyContent">
+                                        <p>Organization: <%=result.value.title %></p>
+                                        <p>Website: <a target="_blank" href="<%=result.value.site%>"><%=result.value.site%></a></p>
+                                        <p>Username: <%=result.value.login%></p>
+                                        <p>Password: <%=result.value.pwd%></p>
+                                        <p>Email: <%=result.value.email%></p>  
+                                        <% result.value.extra.forEach(function(profile) { %>
+                                            <p><%=profile.value.key%>: <%=profile.value.value%></p>
+                                        <% }); %>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>  
-            <% }) %>
+                    </div>  
+                <% }) %>
+            </div>
+            <div class="col-md-3">
+                <p class="goBackLink"><a class="link anchor clearfix" target="_top" href="/">Go Back</a></p>
+            </div>
         </div>
-        <hr/>        
-        <p class="goBackLink"><a class="link anchor clearfix" target="_top" href="/">Go Back</a></p>
 
     
     
