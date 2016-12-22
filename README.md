@@ -9,7 +9,7 @@ With this existing package.json file:
 
 Without this existing package.json file:
   npm init
-  npm install express body-parser consolidate dust dustjs dustjs-linkedin uuid chalk --save
+  npm install express body-parser consolidate dust dustjs dustjs-linkedin uuid chalk couch-db --save
 
 # Install Nodemon
 npm install -g nodemon
