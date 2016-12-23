@@ -5,6 +5,7 @@ var express = require('express'),
 	dust = require('dustjs-helpers'),
     uuid = require('uuid'),
     chalk = require('chalk'),
+    filter = require('./modules/conret'),
 	app = express();
 
 const NodeCouchDb = require('node-couchdb');
@@ -129,7 +130,7 @@ app.post('/add',function(req, res){
 	const title = cfc(req.body.title);
     const login = cfc(req.body.login);
     const pwd = req.body.pwd;
-    const site = req.body.site;
+    const site = (!filter.http(req.body.site))?'http://' + req.body.site:req.body.site;;
     const email = cfc(req.body.email);
     const extra = [];    
     for (var p in req.body) {
@@ -164,7 +165,7 @@ app.post('/edit',function(req, res){
         rev = req.body.rev,
 		uname = cfc(req.body.username),
 		title = cfc(req.body.title),
-		site = req.body.site,
+		site = (!filter.http(req.body.site))?'http://' + req.body.site:req.body.site,
 		pwd = req.body.pwd,
 		email = cfc(req.body.email);
     const data = [];    
