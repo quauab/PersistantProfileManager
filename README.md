@@ -6,6 +6,9 @@
 # Install Dependencies
 With this existing package.json file:
   npm install
+  
+# External Dependencies
+  CouchDB - http://couchdb.apache.org/
 
 Without this existing package.json file:
   npm init
