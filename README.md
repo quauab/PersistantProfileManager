@@ -3,13 +3,13 @@
 ## A web application that manages user profiles, using CouchDB backend
 
 ``` bash
+# External Dependencies
+  CouchDB - http://couchdb.apache.org/
+  
 # Install Dependencies
 With this existing package.json file:
   npm install
   
-# External Dependencies
-  CouchDB - http://couchdb.apache.org/
-
 Without this existing package.json file:
   npm init
   npm install express body-parser consolidate dust dustjs dustjs-linkedin uuid chalk couch-db --save
