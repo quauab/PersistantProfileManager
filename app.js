@@ -130,7 +130,7 @@ app.post('/add',function(req, res){
 	const title = cfc(req.body.title);
     const login = cfc(req.body.login);
     const pwd = req.body.pwd;
-    const site = (!filter.http(req.body.site))?'http://' + req.body.site:req.body.site;;
+    const site = (!filter.http(req.body.site))?'http://' + req.body.site:req.body.site;
     const email = cfc(req.body.email);
     const extra = [];    
     for (var p in req.body) {
