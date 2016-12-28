@@ -71,6 +71,10 @@ $(document).ready(function(){
 		addEmailInput();
 	});
     
+     $('#phoneInput').on('click', function(){
+		addPhoneInput();
+	});
+    
 });
 
 function addTextInput() {
@@ -193,6 +197,53 @@ function addEmailInput() {
 	addAttribute('type', 'email', input);
 	addAttribute('class', 'form-control', input);
 	addAttribute('placeholder', 'Enter ' + cfc(name) + ' Email', input);
+	addAttribute('name', name, input);
+
+	addHandler(remove, 'click', function() {
+		element('form1').removeChild(divParent);
+	});
+
+   
+    
+	appendElement(divParent, divChild);
+	appendElement(divChild, span);
+	appendElement(span, italic);
+	appendElement(divChild, input);
+	appendElement(divChild, remove);
+	appendElement(remove, bold);
+
+	$(divParent).appendTo('.form');
+}
+
+function addPhoneInput() {
+	var divParent = newElement('div'),
+		divChild = newElement('div'),
+		span = newElement('span'),
+		remove = newElement('span'),
+		italic = newElement('i'),
+		bold = newElement('b');
+		input = newElement('input');
+
+	var count = childCount(element('form1')) + 1,
+        name = 'input' + count;
+        
+    if (confirm('Do you want to name the input?')) {
+        newName = prompt('Enter input name');
+        if (newName.length) {
+            name = newName;
+        }
+    }
+
+	addAttribute('class', 'form-group', divParent);
+    // addAttribute('id', 'inputAdder', divParent);
+	addAttribute('class', 'input-group', divChild);
+	addAttribute('class', 'input-group-addon', span);
+	addAttribute('class', 'input-group-addon', remove);
+	addAttribute('class', 'glyphicon glyphicon-phone-alt', italic);
+	addAttribute('class', 'glyphicon glyphicon-remove-sign', bold);
+	addAttribute('type', 'phone', input);
+	addAttribute('class', 'form-control', input);
+	addAttribute('placeholder', 'Enter ' + cfc(name) + ' Phone', input);
 	addAttribute('name', name, input);
 
 	addHandler(remove, 'click', function() {
