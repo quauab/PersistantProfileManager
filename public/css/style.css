@@ -30,6 +30,7 @@ button {
 button:hover {
 	color: rgb(20,80,150);
 	background: rgb(200,200,245);
+    text-decoration:none;
 }
 
 a {
@@ -37,12 +38,15 @@ a {
 }
 
 a:hover {
-    text-decoration:underline;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-#addProfile {
-    margin-top:10%;
+.profile {
+    min-width:20px;
 }
+
+
 
 
 
