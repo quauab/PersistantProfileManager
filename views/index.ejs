@@ -14,6 +14,13 @@
 				<div class="navbar-header">
 					<span class="navbar-brand text topHeader" id="navbarheadertop">Profile Manager</span>
 				</div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a data-toggle="modal" href="#formModalProfile">
+                            Add Profile
+                        </a>
+                    </li>
+                </ul>
 				<ul class="nav navbar-nav pull-right">	
 					<li role="presentation">
                         <div class="searchDiv container-flex">
@@ -33,13 +40,14 @@
 			</div>
 		</nav>	
 		
+      <!--   <header id="addProfile">
+            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#formModalProfile">
+                Add Profile
+            </button>
+        </header> -->
+            
 		<div id="main" class="row main container">	
-                
-            <div class="col-md-6 right v-scroll profileContent">
-                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#formModalProfile">
-                    Add Profile
-                </button>
-                <hr>
+            <div class="col-md-6 right v-scroll profileContent">                
             
                 <% profiles.forEach(function(profile){%>
                     <div class="panel-group">
