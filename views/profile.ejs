@@ -12,12 +12,9 @@
 		<%- include menu.ejs %>
 		
 		<div id="main" class="row profileContent">	
+           
         
-        
-        
-        
-        
-            <div class="v-scroll container">
+            <div class="v-scroll container col-md-10">
                 <form method="post" action="/edit">
                     <div class="row well">
                         <h3 class="header">Edit <%=profile.login%></h3>
@@ -82,18 +79,14 @@
                             </button>
                         </div>	
                     </div>
-                </form>
-                <hr/>        
-                <p class="goBackLink"><a class="link anchor clearfix" target="_top" href="/">Go Back</a></p>
+                </form>   
+                
             </div> 
-        
-               
 
 
-
-
-
-               
+            <div class="col-md-2 go-back">
+                <p class="goBackLink"><a class="link anchor clearfix" target="_top" href="/">Go Back</a></p>
+            </div>
         </div>
         <%- include footer %>
 	</body>
