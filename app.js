@@ -53,7 +53,7 @@ app.get('/profile/:id', function(req, res){
     couch.get(dbName,req.params.id).then(({data, headers, status}) => {
         res.render('profile', {profile:data,pageTitle:'Profile'});
     }, err => {
-        console.log(err);
+        // console.log(err);
     });
 });
 

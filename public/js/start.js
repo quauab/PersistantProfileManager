@@ -38,7 +38,7 @@ $(document).ready(function(){
 	});
 	
 	//*
-	$('.profile').on('click', function(){
+	$('.spanProfile').on('click', function(){
 		var id = $(this).data('id'),
 			url = '/profile/' + id;
 		$.ajax({
