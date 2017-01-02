@@ -14,24 +14,31 @@
 				<div class="navbar-header">
 					<span class="navbar-brand text topHeader" id="navbarheadertop">Profile Manager</span>
 				</div>
+                <ul class="nav navbar-nav profileAdder">
+                    <li>
+                        <a data-toggle="modal" href="#formModalProfile">
+                            Add Profile
+                        </a>
+                    </li>
+                    <li role="presentation">                        
+                        <a data-toggle="collapse" href="#searcher">
+                            Search
+                        </a>
+                    </li>
+                </ul>
 				<ul class="nav navbar-nav pull-right">	
 					<li role="presentation">
-                        <div class="searchDiv container-flex">
-                            <a id="searchLink" data-toggle="collapse" href="#searcher">
-                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                            </a>
-                            <div id="searcher" class="panel-collapse collapse">
-                                <form class="form inline-horizontal searchForm" method="POST" action="/search">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="keyword" placeholder="Enter Search Term" required />
-                                    </div>
-                                </form>
-                            </div>
+                        <div id="searcher" class="panel-collapse collapse">
+                            <form class="form inline-horizontal searchForm" method="POST" action="/search">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="keyword" placeholder="Enter Search Term" required />
+                                </div>
+                            </form>
                         </div>
                     </li>				
 				</ul>					
 			</div>
-		</nav>
+		</nav>	
     
     
         <div id="resultPage" class="row">
